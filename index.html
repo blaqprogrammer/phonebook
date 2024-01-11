@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHONE-BOOK</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="first-display">
+      <section>
+        <section class="section-head">
+          <h3>All Contacts</h3>
+        </section>
+        <section class="section-body">
+          <p id="newName">
+            You have no contacts yet. Use the add contact button to add new
+            contacts
+          </p>
+          <p id="newPhoneNo"></p>
+        </section>
+        <section id="contact-btn" class="section-button">
+          <button id="add-contact-btn" onsubmit="submitHandler()">
+            Add Contact
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <form action="" id="form-display">
+      <input type="text" name="name" id="name" placeholder="Full Name" />
+
+      <input type="tel" id="phone-number" placeholder="Phone Number" />
+
+      <input type="text" id="location" placeholder="location" />
+
+      <input type="text" id="company" placeholder="company" />
+
+      <input type="text" id="blood-group" placeholder="blood group" />
+
+      <div id="contact-btn-one">
+        <button type="submit"
+          style="background-color: rgb(199, 247, 247); color: rgb(4, 46, 46)"
+
+        >
+          Add Contact
+        </button>
+      </div>
+    </form>
+    <script src="./index.js"></script>
+  </body>
+</html>
