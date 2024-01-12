@@ -50,13 +50,13 @@ const submitHandler = (event) => {
 
     if (index === 0) {
       paragraphElement.style.fontWeight = "bold";
-      paragraphElement.style.fontSize = "20px";
+      paragraphElement.style.fontSize = "1.5rem";
       paragraphElement.style.color = "rgb(22, 97, 97);";
 
     }
 
     if (index === filteredArray.length -1) {
-      paragraphElement.style.marginBottom = "10px";
+      paragraphElement.style.marginBottom = "17px";
     }
 
     textElement.appendChild(paragraphElement);
