@@ -67,6 +67,12 @@ form input:focus {
   display: none;
 }
 
+/* #newName{
+  background-color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+} */
+
 @media screen and (max-width: 768px) {
   main {
     width: 100%;

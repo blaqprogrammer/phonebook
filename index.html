@@ -13,10 +13,7 @@
           <h3>All Contacts</h3>
         </section>
         <section class="section-body">
-          <p id="newName">
-            You have no contacts yet. Use the add contact button to add new
-            contacts
-          </p>
+          <p id="newName"></p>
           <p id="newPhoneNo"></p>
         </section>
         <section id="contact-btn" class="section-button">
@@ -28,20 +25,26 @@
     </main>
 
     <form action="" id="form-display">
-      <input type="text" name="name" id="name" placeholder="Full Name" />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Full Name"
+        required
+      />
 
-      <input type="tel" id="phone-number" placeholder="Phone Number" />
+      <input type="tel" id="phone-number" placeholder="Phone Number" required />
 
-      <input type="text" id="location" placeholder="location" />
+      <input type="text" id="location" placeholder="location" required />
 
-      <input type="text" id="company" placeholder="company" />
+      <input type="text" id="company" placeholder="company" required />
 
-      <input type="text" id="blood-group" placeholder="blood group" />
+      <input type="text" id="blood-group" placeholder="blood group" required />
 
       <div id="contact-btn-one">
-        <button type="submit"
+        <button
+          type="submit"
           style="background-color: rgb(199, 247, 247); color: rgb(4, 46, 46)"
-
         >
           Add Contact
         </button>

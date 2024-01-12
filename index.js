@@ -10,13 +10,16 @@ addContactBtn.addEventListener("click", () => {
 });
 
 const submitHandler = (event) => {
-  const dataArray = [];
-  event.preventDefault();
-  const userName = document.getElementById("name").value;
-  const userPhoneNumber = document.getElementById("phone-number").value;
-  const userLocation = document.getElementById("location").value;
-  const userCompany = document.getElementById("company").value;
-  const userBloodGroup = document.getElementById("blood-group").value;
+  if (event) {
+    event.preventDefault();
+  }
+
+  let dataArray = [];
+  let userName = document.getElementById("name").value;
+  let userPhoneNumber = document.getElementById("phone-number").value;
+  let userLocation = document.getElementById("location").value;
+  let userCompany = document.getElementById("company").value;
+  let userBloodGroup = document.getElementById("blood-group").value;
 
   dataArray.unshift(
     userName,
@@ -26,14 +29,54 @@ const submitHandler = (event) => {
     userBloodGroup
   );
 
-  let newName = document.getElementById("newName");
-  newName.textContent = `${userName}`;
+  console.log(dataArray);
 
-  let newPhoneNo = document.getElementById("newPhoneNo");
-  newPhoneNo.textContent = `${userPhoneNumber}`;
+  let newData = dataArray.map((items, index) => {
+    return { id: index + 1, value: items };
+  });
+
+  console.log(newData);
+
+  let filteredArray = newData.filter((items) => items.id < 3);
+  console.log(filteredArray);
+
+  let textElement = document.getElementById("newName");
+  textElement.style.marginBottom = "10px";
+
+  // Assuming filteredArray is an array of objects with a 'value' property
+  filteredArray.forEach((item, index) => {
+    let paragraphElement = document.createElement("p");
+    paragraphElement.textContent = item.value;
+
+    if (index === 0) {
+      paragraphElement.style.fontWeight = "bold";
+      paragraphElement.style.fontSize = "20px";
+      paragraphElement.style.color = "rgb(22, 97, 97);";
+
+    }
+
+    if (index === filteredArray.length -1) {
+      paragraphElement.style.marginBottom = "10px";
+    }
+
+    textElement.appendChild(paragraphElement);
+  });
+
+  //Clear the input
+  document.getElementById("name").value = "";
+  document.getElementById("phone-number").value = "";
+  document.getElementById("location").value = "";
+  document.getElementById("company").value = "";
+  document.getElementById("blood-group").value = "";
 
   formDisplay.style.display = "none";
   firstDisplay.style.display = "block";
 };
 
 formDisplay.addEventListener("submit", submitHandler);
+
+// document.addEventListener("DOMContentLoaded", function () {
+// Calling submitHandler without an event parameter
+// You can pass a mock event if needed: submitHandler({ preventDefault: () => {} });
+//   submitHandler();
+// });
